@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LegalHive - 9. UI components for animation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #c5d9f0, #8fb8e8);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+/* CENTER CARD - Image mariye */
+.main-card{
+    background:white;
+    width:100%;
+    max-width:640px;
+    border-radius:16px;
+    border:3px solid #0b3d91;
+    padding:28px 30px 18px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.18);
+    text-align:center;
+    overflow:hidden;
+}
+
+.main-card h1{
+    font-size:52px;
+    font-weight:900;
+    letter-spacing:0px;
+    color:#000;
+    margin-bottom:10px;
+}
+.main-card h1 span{ color:#f2a900; }
+
+.main-card img{
+    width:110px;
+    height:110px;
+    object-fit:contain;
+    display:block;
+    margin:5px auto 10px;
+}
+
+/* ===== 9. UI COMPONENTS FOR ANIMATION ===== */
+
+@keyframes slideText {
+    /* Start from initial point */
+    0% { transform: translateX(-100%); opacity:0; }
+    20% { transform: translateX(0); opacity:1; }
+    80% { transform: translateX(0); opacity:1; }
+    100% { transform: translateX(100%); opacity:0; }
+}
+
+@keyframes fadeUp {
+    0% { transform: translateY(20px); opacity:0; }
+    100% { transform: translateY(0); opacity:1; }
+}
+
+/* Text sliding effect + Repeat animation */
+.slide-text{
+    color:#0b3d91;
+    font-size:38px;
+    font-weight:900;
+    margin:8px 0 14px;
+    animation: slideText 4s ease-in-out infinite;
+}
+
+.welcome-desc{
+    font-size:16px;
+    color:#333;
+    line-height:1.6;
+    padding:0 10px;
+    animation: fadeUp 1s ease forwards;
+}
+
+/* 2 Boxes - Image mariye title mattum */
+.boxes{
+    display:flex;
+    gap:16px;
+    margin-top:22px;
+}
+.box{
+    background:#e9e9e9;
+    border:1px solid #d1d1d1;
+    border-radius:12px;
+    padding:24px 10px;
+    flex:1;
+    font-size:20px;
+    color:#222;
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.btn{
+    background:#0b4aa2;
+    color:white;
+    border:none;
+    padding:12px 28px;
+    border-radius:25px;
+    margin-top:22px;
+    cursor:pointer;
+    font-size:20px;
+    font-weight:bold;
+    animation: fadeUp 1.4s ease forwards;
+}
+.footer{
+    font-size:14px;
+    color:#555;
+    margin-top:12px;
+    margin-bottom:4px;
+}
+
+@media(max-width:600px){
+    .main-card h1{ font-size:36px; }
+    .slide-text{ font-size:28px; }
+    .boxes{ flex-direction:column; }
+}
+</style>
+</head>
+<body>
+
+<div class="main-card">
+    <h1>LEGAL<span>HIVE</span></h1>
+
+    <img src="https://img.icons8.com/fluency/240/scales.png" alt="Legal">
+
+    <div class="slide-text">Welcome to LegalHive</div>
+
+    <p class="welcome-desc">
+        Your trusted hub for legal resources, expert advice, and professional lawyers — connecting you to reliable legal support in one place.
+    </p>
+
+    <div class="boxes">
+        <div class="box">Legal Services</div>
+        <div class="box">Our Lawyers</div>
+    </div>
+
+    <button class="btn">Explore More</button>
+    <p class="footer">LegalHive - Trust, Justice and Success</p>
+</div>
+
+</body>
+</html>
